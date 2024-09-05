@@ -31,7 +31,6 @@ def create_model(detected=False):
 
     # distal 2
     if detected:
-        # TODO: is this a bug? should weights_ampa be set to weights_ampa_d2?
         weights_ampa_d2 = {'L2_basket': 0.593, 'L2_pyramidal': 0.164,
                            'L5_pyramidal': 0.0464}
         weights_nmda_d2 = {'L2_basket': 0.175, 'L2_pyramidal': 0.0703,
@@ -39,7 +38,7 @@ def create_model(detected=False):
         synaptic_delays_d2 = {'L2_basket': 0.1, 'L2_pyramidal': 0.1,
                               'L5_pyramidal': 0.1}
         net.add_evoked_drive(
-            'evdist2', mu=169.273, sigma=50.396, numspikes=1, weights_ampa=weights_ampa_d1,
+            'evdist2', mu=169.273, sigma=50.396, numspikes=1, weights_ampa=weights_ampa_d2,
             weights_nmda=weights_nmda_d2, location='distal',
             synaptic_delays=synaptic_delays_d2, event_seed=4)
 
